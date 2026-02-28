@@ -1,0 +1,134 @@
+.choice-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #302626;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 40px;
+  position: relative;
+}
+
+.choice-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.choice-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #ffffff;
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  opacity: 0;
+  margin-bottom: 12px;
+}
+
+.realm-tracker {
+  font-size: 0.8rem;
+  color: #555555;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.realms-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 700px;
+  max-height: 700px;
+  width: 100%;
+  height: 100%;
+}
+
+.realm-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: #313131;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.card-texture {
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.01) 2px,
+      rgba(255,255,255,0.01) 4px
+    );
+  pointer-events: none;
+}
+
+.card-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.realm-card:hover .card-border {
+  opacity: 0.8;
+}
+
+.realm-symbol {
+  font-size: 2.5rem;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.realm-names {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.realm-sanskrit {
+  font-size: 1rem;
+  color: #c9a84c;
+  letter-spacing: 2px;
+}
+
+.realm-english {
+  font-size: 0.75rem;
+  color: #888888;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .realms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.game-btn {
+  margin-top: 40px;
+  padding: 12px 30px;
+  background: transparent;
+  border: 1px solid #000000;
+  color: #ffffff;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: all 0.3s ease;
+}
+
+.game-btn:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}

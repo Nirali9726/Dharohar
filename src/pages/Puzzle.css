@@ -1,0 +1,386 @@
+.puzzle-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding:80px 40px 60px 40px;
+  opacity: 1;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  background: transparent;
+  border: 1px solid #333333;
+  color: #888888;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  border-color: #888888;
+  color: #ffffff;
+}
+
+.puzzle-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #c9a84c;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.puzzle-subtitle {
+  font-size: 0.85rem;
+  color: #555555;
+  letter-spacing: 2px;
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* HUNT PHASE */
+.hunt-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.pieces-progress {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  color: #555555;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 2px;
+  background: #1a1a1a;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #c9a84c;
+  transition: width 0.5s ease;
+}
+
+.hunt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.hunt-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 16px;
+  border: 1px solid #1a1a1a;
+  background: #0f0f0f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hunt-item:hover:not(.found) {
+  border-color: #333333;
+}
+
+.hunt-item.found {
+  border-color: #c9a84c33;
+  background: #c9a84c08;
+}
+
+.hunt-icon {
+  font-size: 1.8rem;
+}
+
+.hunt-label {
+  font-size: 0.65rem;
+  color: #444444;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hunt-item.found .hunt-label {
+  color: #c9a84c;
+}
+
+.assemble-btn {
+  padding: 16px 56px;
+  background: transparent;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: all 0.3s ease;
+}
+
+.assemble-btn:hover {
+  background: #c9a84c;
+  color: #0a0a0a;
+}
+
+/* PUZZLE PHASE */
+.puzzle-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.puzzle-workspace {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  grid-template-rows: repeat(3, 160px);
+  gap: 4px;
+}
+
+.board-cell {
+  width: 160px;
+  height: 160px;
+  border: 1px solid #1a1a1a;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+}
+
+.board-cell:hover {
+  border-color: #333333;
+}
+
+.placed-piece {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  font-size: 1.2rem;
+}
+
+.pieces-tray {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 160px;
+}
+
+.tray-label {
+  font-size: 0.65rem;
+  color: #444444;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.pieces-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 260px;
+}
+
+.tray-piece {
+  padding: 10px 16px;
+  border: 1px solid #1a1a1a;
+  background: #0f0f0f;
+  color: #666666;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.tray-piece:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+/* SECRET PHASE */
+.secret-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 700px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.portrait {
+  opacity: 0;
+  width: 100%;
+}
+
+.portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.portrait-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.portrait-label {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #444444;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+.portrait-image {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #c9a84c33;
+}
+
+.secret-story {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.secret-label {
+  font-size: 0.65rem;
+  color: #555555;
+  display: flex;
+
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.secret-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #ffffff;
+  margin-top: 0;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.secret-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.secret-text p {
+  font-size: 0.95rem;
+  color: #888888;
+  line-height: 1.9;
+}
+
+.secret-text strong {
+  color: #c9a84c;
+}
+
+.secret-finale {
+  text-align: center;
+  padding: 32px;
+  border: 1px solid #1a1a1a;
+  background: #0f0f0f;
+  margin: 16px 0;
+}
+
+.finale-sanskrit {
+  font-size: 1.3rem;
+  color: #c9a84c;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.finale-translation {
+  font-size: 0.85rem;
+  color: #666666;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.finale-credit {
+  font-size: 0.7rem;
+  color: #444444;
+  letter-spacing: 3px;
+}
+
+.dharohar-sign {
+  font-size: 1rem;
+  color: #888888;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.dharohar-sign strong {
+  color: #c9a84c;
+}
+
+.share-btn {
+  margin: 0 auto;
+  display: block;
+  padding: 14px 48px;
+  background: transparent;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+  background: #c9a84c;
+  color: #0a0a0a;
+}

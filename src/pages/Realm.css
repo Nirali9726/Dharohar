@@ -1,0 +1,164 @@
+ .realm-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.realm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  border-bottom: 1px solid #1a1a1a;
+  opacity: 0;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid #333333;
+  color: #888888;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  border-color: #888888;
+  color: #ffffff;
+}
+
+.realm-title-group {
+  text-align: center;
+  font-size: 10px;
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+.realm-title {
+  font-size: 2rem;
+  margin-left: 150px;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+.realm-subtitle {
+  font-size: 0.75rem;
+  color: #555555;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  margin-left: 150px;
+}
+
+.discovery-tracker {
+  font-size: 0.75rem;
+  color: #555555;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.zone-environment {
+  flex: 1;
+  position: relative;
+  min-height: 600px;
+  margin: 32px 40px;
+  opacity: 0;
+}
+
+.environment-bg {
+  position: absolute;
+  inset: 0;
+  background: #0f0f0f;
+  border: 1px solid #1a1a1a;
+  overflow: hidden;
+}
+
+.env-texture {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 60px,
+      rgba(255,255,255,0.008) 60px,
+      rgba(255,255,255,0.008) 61px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(255,255,255,0.008) 60px,
+      rgba(255,255,255,0.008) 61px
+    );
+}
+
+.env-description {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 0.7rem;
+  color: #2a2a2a;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.objects-container {
+  position: absolute;
+  inset: 0;
+}
+
+.interactive-object {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease;
+}
+
+.interactive-object:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.book-icon {
+  font-size: 2rem;
+  filter: grayscale(0.3);
+  transition: all 0.3s ease;
+}
+
+.interactive-object:hover .book-icon {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.interactive-object.discovered .book-icon {
+  filter: grayscale(0);
+}
+
+.object-label {
+  font-size: 0.65rem;
+  color: #444444;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+  text-align: center;
+  max-width: 100px;
+}
+
+.interactive-object:hover .object-label {
+  color: var(--accent);
+}
+
+.interactive-object.discovered .object-label {
+  color: #c9a84c;
+}
