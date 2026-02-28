@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Dharohar/static/css/main.40e03287.css",
-    "main.js": "/Dharohar/static/js/main.ad0c8b30.js",
+    "main.js": "/Dharohar/static/js/main.9289c4ce.js",
     "static/js/453.aab27c33.chunk.js": "/Dharohar/static/js/453.aab27c33.chunk.js",
     "static/media/bharatMap.jpg": "/Dharohar/static/media/bharatMap.9e9021078f82207b5d1f.jpg",
     "index.html": "/Dharohar/index.html",
     "main.40e03287.css.map": "/Dharohar/static/css/main.40e03287.css.map",
-    "main.ad0c8b30.js.map": "/Dharohar/static/js/main.ad0c8b30.js.map",
+    "main.9289c4ce.js.map": "/Dharohar/static/js/main.9289c4ce.js.map",
     "453.aab27c33.chunk.js.map": "/Dharohar/static/js/453.aab27c33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.40e03287.css",
-    "static/js/main.ad0c8b30.js"
+    "static/js/main.9289c4ce.js"
   ]
 }
